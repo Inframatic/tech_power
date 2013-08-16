@@ -48,7 +48,7 @@ var updateFeed = function() {
       if (!result.error) {
         var divId = site.container;
         if (isNewFeed(result.feed.entries[0].title, divId)){
-          var container = $(divId + " ul");
+          var container = $(divId + " ol");
           container.empty();
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
@@ -58,8 +58,8 @@ var updateFeed = function() {
             else {
               var timeAgo = $.timeago(new Date(entry.publishedDate));
             }
-            var header = "<a target='_blank' href='" + entry.link + "'>" + (i+1) + ": " + entry.title + "</a>";
-            var li =  "<li>" +  header + "</li>" + " \n<span>" + timeAgo + "</span>";
+            var header = "<a target='_blank' href='" + entry.link + "'>" + entry.title + "</a>";
+            var li =  "<li>" +  header + "<aside>" + timeAgo + "</aside>" + "</li>" ;
             $(container).append(li);
           }
         }
