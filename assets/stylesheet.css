@@ -31,7 +31,7 @@ b {
 a { 
   font-family: Verdana;
   font-size: 10pt;
-  color: blue;
+  color: #222222;
   line-height: 9pt;
   text-decoration: none;
   float:center;
@@ -111,4 +111,6 @@ a {
     text-align: center;
     line-height: 2em;
 }
-
+span{
+  font-size:12px;
+}
