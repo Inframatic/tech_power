@@ -3,15 +3,15 @@ var numOfFeeds = 30;
 var hacker = true;
 var previousPullHacker = null;
 var previousPullReddit = null;
-var isNewFeed= function(topEntry, source){
-  if (topEntry ===  previousPullHacker || topEntry === previousPullReddit){
+var isNewFeed= function(entries, source){
+  if (entries ===  previousPullHacker || entries === previousPullReddit){
     return false;
   }
   if (source == "#hacker") {
-    previousPullHacker = topEntry;
+    previousPullHacker = entries;
   }
   else{
-    previousPullReddit = topEntry
+    previousPullReddit = entries
   }
   return true;
 }
@@ -47,7 +47,7 @@ var updateFeed = function() {
     feed.load(function(result) {
       if (!result.error) {
         var divId = site.container;
-        if (isNewFeed(result.feed.entries[0].title, divId)){
+        if (isNewFeed(result.feed.entries, divId)){
           var container = $(divId + " ol");
           container.empty();
           for (var i = 0; i < result.feed.entries.length; i++) {
@@ -72,7 +72,7 @@ var updateFeed = function() {
 }
 $(document).ready(function(){
   var minute = 6000
-  var delay = minute*5;
+  var delay = minute*10;
   google.setOnLoadCallback(updateFeed);
   setInterval(updateFeed, delay);
 })
