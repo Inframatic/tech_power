@@ -1,9 +1,22 @@
+#reddit li a{
+ color:blue;
+}
+
+#hacker {
+font-family: Verdana;
+font-size: 9px;
+color: black;
+background-color: rgb(246, 246, 239);
+}
+
 li {
   margin-bottom: 10px;
+  font-size: 8px;
 }
 
 aside {
-  font-size: 11px;
+  font-size: 9px;
+  color: #828282;
 }
 
 #mini_header_text_pic_container {
@@ -51,11 +64,11 @@ b {
 
 a { 
   font-family: Verdana;
-  font-size: 10pt;
-  color: blue;
+  font-size: 9pt;
   line-height: 9pt;
   text-decoration: none;
   float:center;
+  color:black;
   vertical-align: 4px;
   }
 
@@ -120,6 +133,7 @@ a {
     height: 100%;
     float:left;
     overflow:scroll;
+    color: blue;
 }
 #hacker {
     float: right;
