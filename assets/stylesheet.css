@@ -97,6 +97,7 @@ a {
     position: relative;
     font-family: Verdana;
     overflow:scroll;
+    background-color: #E0E6F0;
 }
 
 #container {
