@@ -2,14 +2,20 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#reddit li a{
+/*#reddit li a{
  background-color: white;
  color:black;
+}*/
+
+#reddit ol li aside a {
+  color:blue;
+  font-style: bold;
+  font-size:8pt;
 }
 
 #hacker ol li aside a {
-  font-size: 6pt;
-  color:gray;
+  font-size: 8pt;
+  color:blue;
 }
 
 #hacker {
@@ -79,7 +85,6 @@ a {
   text-decoration: none;
   float:center;
   color:black;
-  vertical-align: 4px;
   }
 
 /*container*/
