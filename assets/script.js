@@ -53,13 +53,13 @@ var updateFeed = function() {
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
             if (site.container == "#hacker"){
-              var timeAgo = "";
+              var aside = "<a href='" + entry.comments + "'>Comments</a>";
             }
             else {
-              var timeAgo = $.timeago(new Date(entry.publishedDate));
+              var aside = $.timeago(new Date(entry.publishedDate));
             }
             var header = "<a target='_blank' href='" + entry.link + "'>" + entry.title + "</a>";
-            var li =  "<li>" +  header + "<aside>" + timeAgo + "</aside>" + "</li>" ;
+            var li =  "<li>" +  header + "<aside>" + aside + "</aside>" + "</li>" ;
             $(container).append(li);
           }
         }
