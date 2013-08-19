@@ -7,7 +7,10 @@
  color:black;
 }
 
-/*hola*/
+#hacker ol li aside a {
+  font-size: 6pt;
+  color:gray;
+}
 
 #hacker {
 font-family: Verdana;
@@ -18,11 +21,11 @@ background-color: rgb(246, 246, 239);
 
 li {
   margin-bottom: 10px;
-  font-size: 8px;
+  font-size: 12px;
 }
 
 aside {
-  font-size: 9px;
+  font-size: 10px;
   color: #828282;
 }
 
@@ -72,7 +75,6 @@ b {
 
 a { 
   font-family: Verdana;
-  font-size: 9pt;
   line-height: 9pt;
   text-decoration: none;
   float:center;
