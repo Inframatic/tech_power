@@ -3,7 +3,8 @@
 }
 
 #reddit li a{
- color:blue;
+ background-color: white;
+ color:black;
 }
 
 #hacker {
@@ -45,6 +46,7 @@ aside {
 
 html {
   height:100%;
+  background-color:#f7f7f7;;
       }
 
 body {
@@ -137,7 +139,8 @@ a {
     height: 100%;
     float:left;
     overflow:scroll;
-    color: blue;
+    color: black;
+    background-color: white;
 }
 #hacker {
     float: right;
