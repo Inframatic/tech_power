@@ -53,7 +53,6 @@ var updateFeed = function() {
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
             if (site.container == "#hacker"){
-              console.log(entry);
               var aside = entry.content;
             }
             else {
