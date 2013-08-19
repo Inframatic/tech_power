@@ -55,8 +55,25 @@ var updateFeed = function() {
             if (site.container == "#hacker"){
               var aside = entry.content;
             }
+            else if (site.container == "#reddit") {
+              var hrefPattern = /href="([^"]+)"/g;
+              var commentsPattern = /\[(\d+ comments)\]/;
+              var authorPattern = /(by .+<\/a>) <br/
+              var text = entry.content;
+              var hrefs = [];
+              while(hreftmp = hrefPattern.exec(text)) {
+                hrefs.push(hreftmp);
+              }
+              var commentsText = commentsPattern.exec(text);
+              var commentsLink = "<a target='_blank' href='" + hrefs[2][1] + "'>" +  commentsText[0] + "</a>"
+              var authorLink = authorPattern.exec(text)[1];
+              var sourceLink = hrefs[1][1];
+              console.log(authorLink);
+              var aside =commentsLink  + " " + authorLink +  $.timeago(new Date(entry.publishedDate)) ;
+              entry.link = sourceLink ;
+            }
             else {
-              var aside = $.timeago(new Date(entry.publishedDate));
+               var aside = $.timeago(new Date(entry.publishedDate))
             }
             var header = "<a target='_blank' href='" + entry.link + "'>" + entry.title + "</a>";
             var li =  "<li>" +  header + "<aside>" + aside + "</aside>" + "</li>" ;
