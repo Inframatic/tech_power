@@ -65,10 +65,13 @@ var updateFeed = function() {
                 hrefs.push(hreftmp);
               }
               var commentsText = commentsPattern.exec(text);
+              if (!commentsText){
+                commentsText = []
+                commentsText[0] = "[0 comments]"
+              }
               var commentsLink = "<a target='_blank' href='" + hrefs[2][1] + "'>" +  commentsText[0] + "</a>"
               var authorLink = authorPattern.exec(text)[1];
               var sourceLink = hrefs[1][1];
-              console.log(authorLink);
               var aside =commentsLink  + " " + authorLink +  $.timeago(new Date(entry.publishedDate)) ;
               entry.link = sourceLink ;
             }
