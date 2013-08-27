@@ -64,12 +64,11 @@ var updateFeed = function() {
               while(hreftmp = hrefPattern.exec(text)) {
                 hrefs.push(hreftmp);
               }
-              var commentsText = commentsPattern.exec(text);
-              if (!commentsText){
-                commentsText = []
-                commentsText[0] = "[0 comments]"
+              var commentsText = commentsPattern.exec(text) || "[0 comments]";
+              if (commentsText instanceof Array){
+                commentsText = commentsText[0]
               }
-              var commentsLink = "<a target='_blank' href='" + hrefs[2][1] + "'>" +  commentsText[0] + "</a>"
+              var commentsLink = "<a target='_blank' href='" + hrefs[2][1] + "'>" +  commentsText + "</a>"
               var authorLink = authorPattern.exec(text)[1];
               var sourceLink = hrefs[1][1];
               var aside =commentsLink  + " " + authorLink +  $.timeago(new Date(entry.publishedDate)) ;
